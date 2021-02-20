@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="@android:color/white">
+
+    <include
+        layout="@layout/toolbar"
+         />
+
+
+
+
+
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView"
+        android:layout_marginTop="120dp"
+        android:background="@android:color/white"/>
+
+
+    <include
+        layout="@layout/row"
+        android:layout_width="385dp"
+        android:layout_height="305dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="140dp"
+        />
+
+    <ImageView
+        android:id="@+id/detailedViewIcon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="70dp"
+        android:layout_marginStart="125dp"
+        android:layout_marginLeft="125dp"
+        app:srcCompat="@drawable/detailed" />
+
+    <ImageView
+        android:id="@+id/mapViewIcon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="125dp"
+        android:layout_marginRight="125dp"
+        app:srcCompat="@drawable/map" />
+
+</RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+

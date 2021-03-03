@@ -14,16 +14,14 @@
          />
 
 
-
-
-
-
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/listView"
         android:layout_marginTop="120dp"
-        android:background="@android:color/white"/>
+        android:background="@android:color/white">
+
+    </ListView>
 
 
     <include
@@ -44,6 +42,7 @@
         android:layout_marginStart="125dp"
         android:layout_marginLeft="125dp"
         app:srcCompat="@drawable/detailed" />
+    
 
     <ImageView
         android:id="@+id/mapViewIcon"

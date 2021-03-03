@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+
 public class Homepage extends AppCompatActivity {
     ListView listView;
     String venueTitle[] = {"The Fawcett Inn", "The Fat Fox", "PRYZM Portsmouth", "The Astoria", "The Dockyard", "Meat and Barrel", "O'Neills", "Bonita's","Brewhouse and Kitchen", "The Southsea Villiage", "Mr Miyagis","Scarlet Tap","Lord John Russell","The Fleet/Popworld","The One Eyed Dog"};
@@ -33,6 +34,24 @@ public class Homepage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.homepage);
+
+        ImageView help = findViewById(R.id.help);
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToHelp = new Intent(v.getContext(), Help.class);
+                startActivity(goToHelp);
+            }
+        });
+
+        ImageView settings = findViewById(R.id.settings);
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToSettings = new Intent(v.getContext(), Settings.class);
+                startActivity(goToSettings);
+            }
+        });
 
 
         listView = findViewById(R.id.listView);

@@ -53,6 +53,15 @@ public class Homepage extends AppCompatActivity {
             }
         });
 
+        ImageView title = findViewById(R.id.toolbar_title);
+        title.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToMain = new Intent(v.getContext(), MainActivity.class);
+                startActivity(goToMain);
+            }
+        });
+
 
         listView = findViewById(R.id.listView);
 

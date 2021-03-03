@@ -30,6 +30,33 @@ public class Brewhouse_And_Kitchen extends AppCompatActivity {
             flipperImages(images[i]);
         }
 
+        ImageView help = findViewById(R.id.help);
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToHelp = new Intent(v.getContext(), Help.class);
+                startActivity(goToHelp);
+            }
+        });
+
+        ImageView settings = findViewById(R.id.settings);
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToSettings = new Intent(v.getContext(), Settings.class);
+                startActivity(goToSettings);
+            }
+        });
+
+        ImageView title = findViewById(R.id.toolbar_title);
+        title.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToMain = new Intent(v.getContext(), MainActivity.class);
+                startActivity(goToMain);
+            }
+        });
+
         ImageView smokingAreaIcon = (ImageView) findViewById(R.id.smokingArea);
         smokingAreaIcon.setOnClickListener(new View.OnClickListener() {
             @Override

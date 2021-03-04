@@ -3,10 +3,13 @@ package com.example.pompeynights;
 import androidx.fragment.app.FragmentActivity;
 
 import android.content.Intent;
+import android.location.Location;
 import android.os.Bundle;
 
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.LocationSource;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
@@ -46,6 +49,8 @@ public class Map extends FragmentActivity implements OnMapReadyCallback {
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+
 
         arrayList.add(fawcettinn);
         arrayList.add(fatfox);
@@ -187,6 +192,8 @@ public class Map extends FragmentActivity implements OnMapReadyCallback {
                     }
 
                 });
+
+
 
 
     }

@@ -20,6 +20,8 @@ import org.w3c.dom.Text;
 
 
 public class Homepage extends AppCompatActivity {
+
+    //Variables for venue array
     ListView listView;
     String venueTitle[] = {"The Fawcett Inn", "The Fat Fox", "PRYZM Portsmouth", "The Astoria", "The Dockyard", "Meat and Barrel", "O'Neills", "Bonita's","Brewhouse and Kitchen", "The Southsea Villiage", "Mr Miyagis","Scarlet Tap","Lord John Russell","The Fleet/Popworld","The One Eyed Dog"};
     String venueAddress[]= {"176 Fawcett Rd, Southsea PO40DP","11-13 Victoria Rd S. Southsea PO62SP","Connaught Drill Hall, Stanhope Road PO11DU","37-39 Guildhall Walk Portsmouth PO12RY", "19 Guildhall Walk Portsmouth PO12RY","110-114 Palmerston Rd Southsea PO53PT", "Albert Rd Southsea Portsmouth PO52SX", "106 Palmerston Rd Southsea Portsmouth PO53PT", "26 Guildhall Walk Portsmouth PO12DD","81 Palmerston Rd Southsea Portsmouth PO53PP", "29-33 Guildhall Walk Portsmouth PO12RY","80-82 Palmerston Rd, Southsea", "12 Albert Rd Southsea PO52SH","1 King Henry I St Portsmouth PO12PT","177-185 Elm Grove Southsea Portsmouth PO51LU"};
@@ -35,6 +37,7 @@ public class Homepage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.homepage);
 
+        //Directs user to help page
         ImageView help = findViewById(R.id.help);
         help.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +47,7 @@ public class Homepage extends AppCompatActivity {
             }
         });
 
+        //Directs user to settings page
         ImageView settings = findViewById(R.id.settings);
         settings.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +57,7 @@ public class Homepage extends AppCompatActivity {
             }
         });
 
+        //Restarts app
         ImageView title = findViewById(R.id.toolbar_title);
         title.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,11 +67,8 @@ public class Homepage extends AppCompatActivity {
             }
         });
 
-
-        listView = findViewById(R.id.listView);
-
+        //Directs user to detailed view
         ImageView detailedImage = (ImageView) findViewById(R.id.detailedViewIcon);
-
         detailedImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,8 +77,8 @@ public class Homepage extends AppCompatActivity {
             }
         });
 
+        //Directs user to map view
         ImageView mapImage = (ImageView) findViewById(R.id.mapViewIcon);
-
         mapImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,23 +87,18 @@ public class Homepage extends AppCompatActivity {
             }
         });
 
-
-
-
-
+        //Sets adapter class to listview
+        listView = findViewById(R.id.listView);
         MyAdapter adapter = new MyAdapter(this,venueTitle,venueAddress, venueImages, typeIcon, typeIcon2, typeIcon3, venueRating);
         listView.setAdapter(adapter);
 
-
-
+        //On click listener takes the position of the venue in the array and sends the user to the correct page
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 LayoutInflater layoutInflater = (LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 View row = layoutInflater.inflate(R.layout.row,parent,false);
-
-
 
                 if (position == 0) {
                     Intent intent0 = new Intent(view.getContext(), Fawcett_Inn.class);
@@ -166,6 +163,7 @@ public class Homepage extends AppCompatActivity {
             }});
     }
 
+    //Creates the adapter for a single venue showing on the homescreen
     class MyAdapter extends ArrayAdapter<String>{
         Context context;
         String vTitle[];
@@ -188,8 +186,7 @@ public class Homepage extends AppCompatActivity {
             this.vRating = venueRating;
         }
 
-
-
+        // Matches the variables to the position on the page
         @NonNull
         @Override
         public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {

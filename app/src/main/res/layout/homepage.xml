@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity"
-    android:background="@android:color/white">
+    android:background="?attr/whitetopurple">
 
     <include
         layout="@layout/toolbar"
@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/listView"
         android:layout_marginTop="120dp"
-        android:background="@android:color/white">
+        android:background="?attr/whitetopurple">
 
     </ListView>
 
@@ -30,6 +30,8 @@
         android:layout_height="305dp"
         android:layout_alignParentStart="true"
         android:layout_marginTop="140dp"
+        android:layout_marginRight="25dp"
+
         />
 
     <ImageView

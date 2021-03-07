@@ -3,6 +3,7 @@ package com.example.pompeynights;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Context;
 import android.content.Intent;
@@ -23,7 +24,6 @@ public class Detailed_View extends AppCompatActivity {
     int typeIcon[] = {R.drawable.beericon, R.drawable.beericon, R.drawable.beericon, R.drawable.beericon, R.drawable.beericon, R.drawable.cutleryicon, R.drawable.beericon, R.drawable.beericon, R.drawable.beericon, R.drawable.beericon, R.drawable.beericon, R.drawable.beericon, R.drawable.beericon, R.drawable.beericon, R.drawable.beericon};
     int typeIcon2[] = {R.drawable.cutleryicon, R.drawable.cutleryicon, R.drawable.musicicon, R.drawable.musicicon, R.drawable.cutleryicon, ' ', R.drawable.cutleryicon, R.drawable.cutleryicon, R.drawable.cutleryicon, R.drawable.cutleryicon, R.drawable.musicicon, R.drawable.cutleryicon, ' ', R.drawable.cutleryicon, R.drawable.musicicon};
     int typeIcon3[] = {' ', R.drawable.musicicon, ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', R.drawable.musicicon, ' '};
-    int venueRating[] = {R.drawable.fourstars, R.drawable.threestars, R.drawable.fivestars, R.drawable.fourstars, R.drawable.fourstars, R.drawable.fivestars, R.drawable.fourstars, R.drawable.fourstars, R.drawable.fourstars, R.drawable.fourstars, R.drawable.fourstars, R.drawable.fourstars, R.drawable.fourstars, R.drawable.fourstars, R.drawable.fourstars};
     int feature1[] = {R.drawable.television,R.drawable.television,R.drawable.smokingarea,R.drawable.smokingarea,R.drawable.television,R.drawable.smokingarea,R.drawable.television,R.drawable.smokingarea,R.drawable.smokingarea,R.drawable.smokingarea,R.drawable.smokingarea,R.drawable.television,R.drawable.smokingarea,R.drawable.smokingarea,R.drawable.smokingarea};
     int feature2[] = {R.drawable.smokingarea,R.drawable.smokingarea,R.drawable.dancefloor,R.drawable.dancefloor,R.drawable.smokingarea,R.drawable.takeaway,R.drawable.smokingarea,R.drawable.disabled,R.drawable.disabled,R.drawable.takeaway,R.drawable.dancefloor,R.drawable.smokingarea,R.drawable.disabled,R.drawable.dancefloor,R.drawable.livemusic};
     int feature3[] = {R.drawable.disabled,R.drawable.dancefloor,R.drawable.entryfee,R.drawable.entryfee,R.drawable.dancefloor,R.drawable.disabled,R.drawable.livemusic,R.drawable.wifi,R.drawable.wifi,R.drawable.disabled,R.drawable.entryfee,R.drawable.disabled,R.drawable.pool,R.drawable.entryfee,R.drawable.pool};
@@ -34,6 +34,10 @@ public class Detailed_View extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+            setTheme(R.style.DarkTheme);
+        }
+        else setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detailedviews);
 
@@ -67,7 +71,7 @@ public class Detailed_View extends AppCompatActivity {
 
         detailedListView = findViewById(R.id.detailedListView);
 
-        MyDetailedAdapter adapter = new MyDetailedAdapter(this,venueTitle,venueAddress, typeIcon, typeIcon2, typeIcon3, venueRating, feature1, feature2, feature3, feature4, feature5, feature6);
+        MyDetailedAdapter adapter = new MyDetailedAdapter(this,venueTitle,venueAddress, typeIcon, typeIcon2, typeIcon3,feature1, feature2, feature3, feature4, feature5, feature6);
         detailedListView.setAdapter(adapter);
 
         ImageView pictureImage = (ImageView) findViewById(R.id.imageViewIcon);
@@ -165,7 +169,6 @@ public class Detailed_View extends AppCompatActivity {
         int tIcon[];
         int tIcon2[];
         int tIcon3[];
-        int vRating[];
         int vFeature1[];
         int vFeature2[];
         int vFeature3[];
@@ -173,7 +176,7 @@ public class Detailed_View extends AppCompatActivity {
         int vFeature5[];
         int vFeature6[];
 
-        MyDetailedAdapter(Context c, String[] vTitle, String[] vAddress,int[] tIcon, int[] tIcon2, int[] tIcon3, int[] vRating, int[] vFeature1, int[] vFeature2, int[] vFeature3, int[] vFeature4, int[] vFeature5, int[] vFeature6){
+        MyDetailedAdapter(Context c, String[] vTitle, String[] vAddress,int[] tIcon, int[] tIcon2, int[] tIcon3, int[] vFeature1, int[] vFeature2, int[] vFeature3, int[] vFeature4, int[] vFeature5, int[] vFeature6){
             super(c, R.layout.details,R.id.venueName, venueTitle);
             this.context = c;
             this.vTitle = venueTitle;
@@ -181,7 +184,6 @@ public class Detailed_View extends AppCompatActivity {
             this.tIcon = typeIcon;
             this.tIcon2 = typeIcon2;
             this.tIcon3 = typeIcon3;
-            this.vRating = venueRating;
             this.vFeature1 = feature1;
             this.vFeature2 = feature2;
             this.vFeature3 = feature3;
@@ -201,7 +203,6 @@ public class Detailed_View extends AppCompatActivity {
             ImageView icons = details.findViewById(R.id.iconView1);
             ImageView icons2 = details.findViewById(R.id.iconView2);
             ImageView icons3 = details.findViewById(R.id.iconView3);
-            ImageView ratings = details.findViewById(R.id.ratingView);
             TextView title = details.findViewById(R.id.venueName);
             TextView address = details.findViewById(R.id.venueAddress);
             ImageView feature1 = details.findViewById(R.id.feature1);
@@ -214,7 +215,6 @@ public class Detailed_View extends AppCompatActivity {
             icons.setImageResource(tIcon[position]);
             icons2.setImageResource(tIcon2[position]);
             icons3.setImageResource(tIcon3[position]);
-            ratings.setImageResource(vRating[position]);
             title.setText(vTitle[position]);
             address.setText(vAddress[position]);
             feature1.setImageResource(vFeature1[position]);

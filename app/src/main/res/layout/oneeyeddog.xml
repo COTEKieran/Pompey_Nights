@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@android:color/white">
+    android:background="?attr/whitetopurple">
 
     <ImageView
         android:id="@+id/smokingArea"
@@ -40,13 +40,13 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_marginTop="335dp"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_gravity="center"
+        android:layout_marginTop="335dp"
         android:fontFamily="@font/rockwell"
+        android:gravity="center"
         android:text="The One Eyed Dog"
-        android:textColor="@color/mainPurple"
+        android:textColor="?attr/purpletogrey"
         android:textSize="24sp" />
 
     <TextView
@@ -58,16 +58,21 @@
         android:layout_marginTop="359dp"
         android:fontFamily="@font/rockwell"
         android:text="177-185 Elm Grove, Southsea, Portsmouth O5 1LU"
-        android:textColor="@color/mainPurple" />
+        android:textColor="?attr/purpletogrey" />
 
-    <ImageView
+    <RatingBar
         android:id="@+id/venueRating"
-        android:layout_width="165dp"
-        android:layout_height="23dp"
+        style="@android:style/Widget.Holo.RatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:numStars="5"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="383dp"
-        app:srcCompat="@drawable/fourstars" />
+        android:layout_marginTop="370dp"
+        android:progressBackgroundTint="@color/darkgrey"
+        android:progressTint="@color/mainPurple"
+        />
 
     <TextView
         android:id="@+id/textView3"
@@ -140,6 +145,7 @@
         android:layout_marginRight="100dp"
         android:layout_marginBottom="140dp"
         app:srcCompat="@drawable/livemusic" />
+
     <TextView
         android:id="@+id/phoneSymbol"
         android:layout_width="94dp"
@@ -152,6 +158,7 @@
         android:layout_marginBottom="28dp"
         android:fontFamily="@font/rockwell"
         android:text="023 9286 3341"
+        android:textColor="?attr/purpletogrey"
         android:textSize="14sp" />
 
     <ImageView
@@ -238,5 +245,7 @@
         android:layout_marginStart="85dp"
         android:layout_marginLeft="85dp"
         android:layout_marginBottom="219dp"
-        android:text="Click to locate this \nvenue on  a map" />
+        android:fontFamily="@font/rockwell"
+        android:text="Click to locate this \nvenue on  a map"
+        android:textColor="?attr/purpletogrey" />
 </RelativeLayout>

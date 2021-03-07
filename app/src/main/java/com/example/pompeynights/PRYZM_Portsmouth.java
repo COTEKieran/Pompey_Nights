@@ -1,8 +1,10 @@
 package com.example.pompeynights;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -10,15 +12,29 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 public class PRYZM_Portsmouth extends AppCompatActivity {
     ViewFlipper v_flipper;
+    RatingBar ratingBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+            setTheme(R.style.DarkTheme);
+        }
+        else setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pryzm);
+        ratingBar = (RatingBar) findViewById(R.id.venueRating);
+        ratingBar.setRating(load());
+        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                save(rating);
+            }
+        });
 
         ImageView help = findViewById(R.id.help);
         help.setOnClickListener(new View.OnClickListener() {
@@ -197,6 +213,19 @@ public class PRYZM_Portsmouth extends AppCompatActivity {
         entryFeeToast.setDuration(Toast.LENGTH_SHORT);
         entryFeeToast.setView(entryFeeLayout);
         entryFeeToast.show();
+    }
+
+    public void save(float f){
+        SharedPreferences sharedPreferences = getSharedPreferences("folder", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putFloat("pryzm", f);
+        editor.commit();
+    }
+
+    public float load(){
+        SharedPreferences sharedPreferences = getSharedPreferences("folder", MODE_PRIVATE);
+        float f = sharedPreferences.getFloat("pryzm",0f);
+        return f;
     }
 
 }

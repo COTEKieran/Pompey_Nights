@@ -4,7 +4,7 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
-android:background="@android:color/white">
+android:background="?attr/whitetopurple">
 
 <ImageView
     android:id="@+id/smokingArea"
@@ -37,37 +37,42 @@ android:background="@android:color/white">
     android:layout_marginRight="7dp"
     />
 
-<TextView
-    android:id="@+id/textView"
-    android:layout_width="match_parent"
-    android:layout_marginTop="335dp"
-    android:layout_height="wrap_content"
-    android:gravity="center"
-    android:layout_gravity="center"
-    android:fontFamily="@font/rockwell"
-    android:text="The Astoria"
-    android:textColor="@color/mainPurple"
-    android:textSize="24sp" />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="335dp"
+        android:fontFamily="@font/rockwell"
+        android:gravity="center"
+        android:text="The Astoria"
+        android:textColor="?attr/purpletogrey"
+        android:textSize="24sp" />
 
-<TextView
-    android:id="@+id/addressOfVenue"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignParentTop="true"
-    android:layout_centerHorizontal="true"
-    android:layout_marginTop="359dp"
-    android:fontFamily="@font/rockwell"
-    android:text="37-39 Guildhall Walk, Portsmouth PO1 2RY"
-    android:textColor="@color/mainPurple" />
+    <TextView
+        android:id="@+id/addressOfVenue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="359dp"
+        android:fontFamily="@font/rockwell"
+        android:text="37-39 Guildhall Walk, Portsmouth PO1 2RY"
+        android:textColor="?attr/purpletogrey" />
 
-<ImageView
-    android:id="@+id/venueRating"
-    android:layout_width="165dp"
-    android:layout_height="23dp"
-    android:layout_alignParentTop="true"
-    android:layout_centerHorizontal="true"
-    android:layout_marginTop="383dp"
-    app:srcCompat="@drawable/fourstars" />
+    <RatingBar
+        android:id="@+id/venueRating"
+        style="@android:style/Widget.Holo.RatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:numStars="5"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="370dp"
+        android:progressBackgroundTint="@color/darkgrey"
+        android:progressTint="@color/mainPurple"
+        />
 
 <TextView
     android:id="@+id/textView3"
@@ -130,19 +135,20 @@ android:background="@android:color/white">
     android:layout_marginBottom="20dp"
     app:srcCompat="@drawable/phone" />
 
-<TextView
-    android:id="@+id/phoneSymbol"
-    android:layout_width="94dp"
-    android:layout_height="wrap_content"
-    android:layout_alignParentStart="true"
-    android:layout_alignParentLeft="true"
-    android:layout_alignParentBottom="true"
-    android:layout_marginStart="69dp"
-    android:layout_marginLeft="69dp"
-    android:layout_marginBottom="28dp"
-    android:fontFamily="@font/rockwell"
-    android:text="023 9286 3741"
-    android:textSize="14sp" />
+    <TextView
+        android:id="@+id/phoneSymbol"
+        android:layout_width="94dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="69dp"
+        android:layout_marginLeft="69dp"
+        android:layout_marginBottom="28dp"
+        android:fontFamily="@font/rockwell"
+        android:text="023 9286 3741"
+        android:textColor="?attr/purpletogrey"
+        android:textSize="14sp" />
 
 <ImageView
     android:id="@+id/internetLink"
@@ -230,15 +236,17 @@ android:background="@android:color/white">
     android:layout_marginBottom="218dp"
     app:srcCompat="@drawable/mapicon" />
 
-<TextView
-    android:id="@+id/textView2"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignParentStart="true"
-    android:layout_alignParentLeft="true"
-    android:layout_alignParentBottom="true"
-    android:layout_marginStart="85dp"
-    android:layout_marginLeft="85dp"
-    android:layout_marginBottom="219dp"
-    android:text="Click to locate this \nvenue on  a map" />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="85dp"
+        android:layout_marginLeft="85dp"
+        android:layout_marginBottom="219dp"
+        android:fontFamily="@font/rockwell"
+        android:text="Click to locate this \nvenue on  a map"
+        android:textColor="?attr/purpletogrey" />
 </RelativeLayout>

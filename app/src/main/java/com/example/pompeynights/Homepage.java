@@ -3,9 +3,10 @@ package com.example.pompeynights;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
+import androidx.appcompat.app.AppCompatDelegate;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,14 +15,16 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RatingBar;
 import android.widget.TextView;
-
 import org.w3c.dom.Text;
 
 
 public class Homepage extends AppCompatActivity {
 
     //Variables for venue array
+    SharedPreferences wmbPreference1;
+    SharedPreferences.Editor editor;
     ListView listView;
     String venueTitle[] = {"The Fawcett Inn", "The Fat Fox", "PRYZM Portsmouth", "The Astoria", "The Dockyard", "Meat and Barrel", "O'Neills", "Bonita's","Brewhouse and Kitchen", "The Southsea Villiage", "Mr Miyagis","Scarlet Tap","Lord John Russell","The Fleet/Popworld","The One Eyed Dog"};
     String venueAddress[]= {"176 Fawcett Rd, Southsea PO40DP","11-13 Victoria Rd S. Southsea PO62SP","Connaught Drill Hall, Stanhope Road PO11DU","37-39 Guildhall Walk Portsmouth PO12RY", "19 Guildhall Walk Portsmouth PO12RY","110-114 Palmerston Rd Southsea PO53PT", "Albert Rd Southsea Portsmouth PO52SX", "106 Palmerston Rd Southsea Portsmouth PO53PT", "26 Guildhall Walk Portsmouth PO12DD","81 Palmerston Rd Southsea Portsmouth PO53PP", "29-33 Guildhall Walk Portsmouth PO12RY","80-82 Palmerston Rd, Southsea", "12 Albert Rd Southsea PO52SH","1 King Henry I St Portsmouth PO12PT","177-185 Elm Grove Southsea Portsmouth PO51LU"};
@@ -29,11 +32,15 @@ public class Homepage extends AppCompatActivity {
     int typeIcon[] = {R.drawable.beericon,R.drawable.beericon, R.drawable.beericon,R.drawable.beericon,R.drawable.beericon,R.drawable.cutleryicon,R.drawable.beericon,R.drawable.beericon,R.drawable.beericon,R.drawable.beericon,R.drawable.beericon,R.drawable.beericon,R.drawable.beericon,R.drawable.beericon,R.drawable.beericon};
     int typeIcon2[] = {R.drawable.cutleryicon,R.drawable.cutleryicon,R.drawable.musicicon,R.drawable.musicicon, R.drawable.cutleryicon,' ',R.drawable.cutleryicon,R.drawable.cutleryicon,R.drawable.cutleryicon,R.drawable.cutleryicon,R.drawable.musicicon,R.drawable.cutleryicon,' ',R.drawable.cutleryicon,R.drawable.musicicon};
     int typeIcon3[] = {' ',R.drawable.musicicon,' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',R.drawable.musicicon,' '};
-    int venueRating[] = {R.drawable.fourstars,R.drawable.threestars,R.drawable.fivestars,R.drawable.fourstars, R.drawable.fourstars, R.drawable.fivestars,R.drawable.fourstars,R.drawable.fourstars,R.drawable.fourstars,R.drawable.fourstars,R.drawable.fourstars,R.drawable.fourstars,R.drawable.fourstars,R.drawable.fourstars,R.drawable.fourstars};
     ArrayAdapter<String> arrayAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+            setTheme(R.style.DarkTheme);
+        }
+        else setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.homepage);
 
@@ -89,7 +96,7 @@ public class Homepage extends AppCompatActivity {
 
         //Sets adapter class to listview
         listView = findViewById(R.id.listView);
-        MyAdapter adapter = new MyAdapter(this,venueTitle,venueAddress, venueImages, typeIcon, typeIcon2, typeIcon3, venueRating);
+        MyAdapter adapter = new MyAdapter(this,venueTitle,venueAddress, venueImages, typeIcon, typeIcon2, typeIcon3);
         listView.setAdapter(adapter);
 
         //On click listener takes the position of the venue in the array and sends the user to the correct page
@@ -172,9 +179,9 @@ public class Homepage extends AppCompatActivity {
         int tIcon[];
         int tIcon2[];
         int tIcon3[];
-        int vRating[];
 
-        MyAdapter(Context c, String[] vTitle, String[] vAddress, int[] vImg, int[] tIcon, int[] tIcon2, int[] tIcon3, int[] vRating){
+
+        MyAdapter(Context c, String[] vTitle, String[] vAddress, int[] vImg, int[] tIcon, int[] tIcon2, int[] tIcon3){
             super(c, R.layout.row,R.id.venueName, venueTitle);
             this.context = c;
             this.vTitle = venueTitle;
@@ -183,7 +190,7 @@ public class Homepage extends AppCompatActivity {
             this.tIcon = typeIcon;
             this.tIcon2 = typeIcon2;
             this.tIcon3 = typeIcon3;
-            this.vRating = venueRating;
+
         }
 
         // Matches the variables to the position on the page
@@ -196,19 +203,18 @@ public class Homepage extends AppCompatActivity {
             ImageView icons = row.findViewById(R.id.iconView1);
             ImageView icons2 = row.findViewById(R.id.iconView2);
             ImageView icons3 = row.findViewById(R.id.iconView3);
-            ImageView ratings = row.findViewById(R.id.ratingView);
             TextView title = row.findViewById(R.id.venueName);
             TextView address = row.findViewById(R.id.venueAddress);
             images.setImageResource(vImg[position]);
             icons.setImageResource(tIcon[position]);
             icons2.setImageResource(tIcon2[position]);
             icons3.setImageResource(tIcon3[position]);
-            ratings.setImageResource(vRating[position]);
             title.setText(vTitle[position]);
             address.setText(vAddress[position]);
             return row;
         }
 
+        }
     }
-}
+
 

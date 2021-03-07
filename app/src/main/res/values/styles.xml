@@ -1,10 +1,35 @@
 <resources>
+
+
+
     <!-- Base application theme. -->
+    <!-- Light/Day Mode theme -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="maincolor">@color/mainPurple</item>
+        <item name ="backgroundcolor">@android:color/white</item>
+        <item name = "textcolor">@android:color/white</item>
+        <item name = "whitetopurple">@android:color/white</item>
+        <item name ="android:windowAnimationStyle">@style/windowAnimationTransition </item>
+        <item name="purpletogrey">@color/mainPurple</item>
+    </style>
+
+
+    <!-- Dark/Night Mode theme -->
+    <style name="DarkTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="maincolor">@color/darkerPurple</item>
+        <item name ="backgroundcolor">@color/darkgrey</item>
+        <item name = "textcolor">@android:color/white</item>
+        <item name = "whitetopurple">@color/darkerPurple</item>
+        <item name ="android:windowAnimationStyle">@style/windowAnimationTransition </item>
+        <item name="purpletogrey">@color/darkgrey</item>
+    </style>
+
+    <style name="windowAnimationTransition">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+
     </style>
 
 </resources>

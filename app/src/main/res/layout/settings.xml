@@ -1,13 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Settings">
+    tools:context=".Settings"
+    android:background="?attr/backgroundcolor">
 
     <include
         layout="@layout/toolbar"
         ></include>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/settingsTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:background="?attr/maincolor"
+        android:fontFamily="@font/rockwell"
+        android:gravity="center"
+
+        android:paddingTop="20dp"
+        android:paddingBottom="400dp"
+        android:text="Settings Page"
+        android:textColor="?attr/backgroundcolor"
+        android:textSize="24sp" />
+
+    <Switch
+        android:id="@+id/myswitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="174dp"
+        android:text="Night Mode"
+        android:textColor="?attr/backgroundcolor"
+        android:fontFamily="@font/rockwell"/>
+
+</RelativeLayout>

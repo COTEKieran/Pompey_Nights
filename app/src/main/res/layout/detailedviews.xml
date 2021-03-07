@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity"
-    android:background="@android:color/white">
+    android:background="?attr/whitetopurple">
 
     <include
         layout="@layout/toolbar"
@@ -42,7 +42,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginTop="120dp"
         android:layout_marginBottom="-1dp"
-        android:background="@android:color/white" />
+        android:background="?attr/whitetopurple" />
 
     <include
         layout="@layout/details"

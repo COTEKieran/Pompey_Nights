@@ -1,23 +1,44 @@
 package com.example.pompeynights;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.media.Rating;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 public class Bonitas extends AppCompatActivity {
     ViewFlipper v_flipper;
+    RatingBar ratingBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+            setTheme(R.style.DarkTheme);
+        }
+        else setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bonitas);
+       ratingBar = (RatingBar) findViewById(R.id.venueRating);
+       ratingBar.setRating(load());
+       ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+           @Override
+           public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+               save(rating);
+           }
+       });
 
         int images[] = {R.drawable.bonitas1, R.drawable.bonitas2};
         v_flipper = findViewById(R.id.flipper);
@@ -183,4 +204,19 @@ public class Bonitas extends AppCompatActivity {
         wifiToast.setView(wifiLayout);
         wifiToast.show();
     }
+
+    public void save(float f){
+        SharedPreferences sharedPreferences = getSharedPreferences("folder", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putFloat("bonitasrating", f);
+        editor.commit();
+    }
+
+    public float load(){
+        SharedPreferences sharedPreferences = getSharedPreferences("folder", MODE_PRIVATE);
+        float f = sharedPreferences.getFloat("bonitasrating",0f);
+        return f;
+    }
+
+
 }

@@ -62,29 +62,28 @@
 
                 <ImageView
                     android:id="@+id/iconView1"
-                    android:layout_width="60dp"
+                    android:layout_width="55dp"
                     android:layout_height="60dp"
                     android:layout_marginLeft="5dp"
-                    tools:srcCompat="@tools:sample/avatars"
                     android:layout_marginTop="10dp"
-                    />
+                    tools:srcCompat="@tools:sample/avatars" />
 
                 <ImageView
                     android:id="@+id/iconView2"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
 
                     android:layout_marginLeft="5dp"
-                    tools:srcCompat="@tools:sample/avatars"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="10dp"
+                    tools:srcCompat="@tools:sample/avatars" />
 
                 <ImageView
                     android:id="@+id/iconView3"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
                     android:layout_marginLeft="5dp"
-                    tools:srcCompat="@tools:sample/avatars"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="10dp"
+                    tools:srcCompat="@tools:sample/avatars" />
 
             </LinearLayout>
 

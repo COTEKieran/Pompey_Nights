@@ -26,12 +26,12 @@ public class Homepage extends AppCompatActivity {
     SharedPreferences wmbPreference1;
     SharedPreferences.Editor editor;
     ListView listView;
-    String venueTitle[] = {"The Fawcett Inn", "The Fat Fox", "PRYZM Portsmouth", "The Astoria", "The Dockyard", "Meat and Barrel", "O'Neills", "Bonita's","Brewhouse and Kitchen", "The Southsea Villiage", "Mr Miyagis","Scarlet Tap","Lord John Russell","The Fleet/Popworld","The One Eyed Dog"};
-    String venueAddress[]= {"176 Fawcett Rd, Southsea PO40DP","11-13 Victoria Rd S. Southsea PO62SP","Connaught Drill Hall, Stanhope Road PO11DU","37-39 Guildhall Walk Portsmouth PO12RY", "19 Guildhall Walk Portsmouth PO12RY","110-114 Palmerston Rd Southsea PO53PT", "Albert Rd Southsea Portsmouth PO52SX", "106 Palmerston Rd Southsea Portsmouth PO53PT", "26 Guildhall Walk Portsmouth PO12DD","81 Palmerston Rd Southsea Portsmouth PO53PP", "29-33 Guildhall Walk Portsmouth PO12RY","80-82 Palmerston Rd, Southsea", "12 Albert Rd Southsea PO52SH","1 King Henry I St Portsmouth PO12PT","177-185 Elm Grove Southsea Portsmouth PO51LU"};
-    int venueImages[] = {R.drawable.fawcettinn,R.drawable.fatfox,R.drawable.pryzm,R.drawable.astoria1, R.drawable.dockyard,R.drawable.meatandbarrel,R.drawable.oneils,R.drawable.bonitas,R.drawable.brewhouse,R.drawable.southseavilliage,R.drawable.miyagis,R.drawable.scarlettap,R.drawable.lordjohnrussell,R.drawable.fleet,R.drawable.oneeyeddog};
-    int typeIcon[] = {R.drawable.beericon,R.drawable.beericon, R.drawable.beericon,R.drawable.beericon,R.drawable.beericon,R.drawable.cutleryicon,R.drawable.beericon,R.drawable.beericon,R.drawable.beericon,R.drawable.beericon,R.drawable.beericon,R.drawable.beericon,R.drawable.beericon,R.drawable.beericon,R.drawable.beericon};
-    int typeIcon2[] = {R.drawable.cutleryicon,R.drawable.cutleryicon,R.drawable.musicicon,R.drawable.musicicon, R.drawable.cutleryicon,' ',R.drawable.cutleryicon,R.drawable.cutleryicon,R.drawable.cutleryicon,R.drawable.cutleryicon,R.drawable.musicicon,R.drawable.cutleryicon,' ',R.drawable.cutleryicon,R.drawable.musicicon};
-    int typeIcon3[] = {' ',R.drawable.musicicon,' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',R.drawable.musicicon,' '};
+    String venueTitle[] = {"Astoria", "Bonita's ","Brewhouse and Kitchen", "Dockyard", "Fat Fox", "Fawcett Inn", "Fleet/Popworld", "Lord John Russell", "Meat and Barrel", "Mr Miyagis", "O'Neills", "One Eyed Dog", "PRYZM Portsmouth", "Scarlet Tap", "Southsea Villiage", };
+    String venueAddress[]= {"37-39 Guildhall Walk, Portsmouth PO1 2RY","106 Palmerston Rd, Southsea, Portsmouth PO5 3PT" , "26 Guildhall Walk, Portsmouth PO1 2DD", "19 Guildhall Walk, Portsmouth PO1 2RY" , "11-13 Victoria Rd S. Southsea PO62SP" , "176 Fawcett Rd, Southsea, PO40DP" , "1 King Henry I St, Portsmouth PO1 2PT", "12 Albert Rd, Southsea, Portsmouth PO5 2SH", "110-114 Palmerston Rd, Southsea PO5 3PT" , "29-33 Guildhall Walk, Portsmouth PO1 2RY" , "Albert Rd, Southsea Portsmouth, PO5 2SX" , "177-185 Elm Grove, Southsea, Portsmouth O5 1LU", "Connaught Drill Hall, Stanhope Road, PO11DU" , "80-82 Palmerston Rd, Southsea, Portsmouth PO5 3PT", "81 Palmerston Rd, Southsea, Portsmouth PO5 3PP"};
+    int venueImages[] = {R.drawable.astoria1,R.drawable.bonitas,R.drawable.brewhouse,R.drawable.dockyard,R.drawable.fatfox,R.drawable.fawcettinn,R.drawable.fleet,R.drawable.lordjohnrussell,R.drawable.meatandbarrel,R.drawable.miyagis,R.drawable.oneils,R.drawable.oneeyeddog,R.drawable.pryzm,R.drawable.scarlettap,R.drawable.southseavilliage};
+    int typeIcon[] = {R.drawable.beericon,R.drawable.beericon, R.drawable.beericon,R.drawable.beericon,R.drawable.beericon,R.drawable.beericon,R.drawable.beericon,R.drawable.beericon,R.drawable.beericon,R.drawable.beericon,R.drawable.beericon,R.drawable.beericon,R.drawable.beericon,R.drawable.beericon,R.drawable.beericon};
+    int typeIcon2[] = {R.drawable.musicicon,R.drawable.cutleryicon,R.drawable.cutleryicon,R.drawable.cutleryicon, R.drawable.cutleryicon,R.drawable.cutleryicon,R.drawable.cutleryicon,R.drawable.cutleryicon,R.drawable.cutleryicon,R.drawable.musicicon,R.drawable.cutleryicon,R.drawable.cutleryicon,R.drawable.musicicon,R.drawable.cutleryicon,R.drawable.cutleryicon};
+    int typeIcon3[] = {' ',' ',' ',R.drawable.musicicon,R.drawable.musicicon,' ',R.drawable.musicicon,' ',' ',' ',' ',' ',' ',' ',' '};
     ArrayAdapter<String> arrayAdapter;
 
 
@@ -108,63 +108,63 @@ public class Homepage extends AppCompatActivity {
                 View row = layoutInflater.inflate(R.layout.row,parent,false);
 
                 if (position == 0) {
-                    Intent intent0 = new Intent(view.getContext(), Fawcett_Inn.class);
+                    Intent intent0 = new Intent(view.getContext(), The_Astoria.class);
                     startActivity(intent0);
                 }
                 if (position == 1) {
-                    Intent intent1 = new Intent(view.getContext(), Fat_Fox.class);
+                    Intent intent1 = new Intent(view.getContext(), Bonitas.class);
                     startActivity(intent1);
                 }
                 if (position == 2) {
-                    Intent intent2 = new Intent(view.getContext(), PRYZM_Portsmouth.class);
+                    Intent intent2 = new Intent(view.getContext(), Brewhouse_And_Kitchen.class);
                     startActivity(intent2);
                 }
                 if (position == 3) {
-                    Intent intent3 = new Intent(view.getContext(), The_Astoria.class);
+                    Intent intent3 = new Intent(view.getContext(), The_Dockyard.class);
                     startActivity(intent3);
                 }
                 if (position == 4) {
-                    Intent intent4 = new Intent(view.getContext(), The_Dockyard.class);
+                    Intent intent4 = new Intent(view.getContext(), Fat_Fox.class);
                     startActivity(intent4);
                 }
                 if (position == 5) {
-                    Intent intent5 = new Intent(view.getContext(), Meat_And_Barrel.class);
+                    Intent intent5 = new Intent(view.getContext(), Fawcett_Inn.class);
                     startActivity(intent5);
                 }
                 if (position == 6) {
-                    Intent intent6 = new Intent(view.getContext(), ONeills.class);
+                    Intent intent6 = new Intent(view.getContext(), Fleet_and_Popworld.class);
                     startActivity(intent6);
                 }
                 if (position == 7) {
-                    Intent intent7 = new Intent(view.getContext(), Bonitas.class);
+                    Intent intent7 = new Intent(view.getContext(), Lord_John_Russell.class);
                     startActivity(intent7);
                 }
                 if (position == 8) {
-                    Intent intent8 = new Intent(view.getContext(), Brewhouse_And_Kitchen.class);
+                    Intent intent8 = new Intent(view.getContext(), Meat_And_Barrel.class);
                     startActivity(intent8);
                 }
                 if (position == 9) {
-                    Intent intent9 = new Intent(view.getContext(), Southsea_Villiage.class);
+                    Intent intent9 = new Intent(view.getContext(), Mr_Miyagis.class);
                     startActivity(intent9);
                 }
                 if (position == 10) {
-                    Intent intent10 = new Intent(view.getContext(), Mr_Miyagis.class);
+                    Intent intent10 = new Intent(view.getContext(), ONeills.class);
                     startActivity(intent10);
                 }
                 if (position == 11) {
-                    Intent intent11 = new Intent(view.getContext(), Scarlet_Tap.class);
+                    Intent intent11 = new Intent(view.getContext(), One_Eyed_Dog.class);
                     startActivity(intent11);
                 }
                 if (position == 12) {
-                    Intent intent12 = new Intent(view.getContext(), Lord_John_Russell.class);
+                    Intent intent12 = new Intent(view.getContext(), PRYZM_Portsmouth.class);
                     startActivity(intent12);
                 }
                 if (position == 13) {
-                    Intent intent13 = new Intent(view.getContext(), Fleet_and_Popworld.class);
+                    Intent intent13 = new Intent(view.getContext(), Scarlet_Tap.class);
                     startActivity(intent13);
                 }
                 if (position == 14) {
-                    Intent intent14 = new Intent(view.getContext(), One_Eyed_Dog.class);
+                    Intent intent14 = new Intent(view.getContext(), Southsea_Villiage.class);
                     startActivity(intent14);
                 }
             }});

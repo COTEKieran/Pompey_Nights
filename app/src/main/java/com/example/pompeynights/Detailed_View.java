@@ -100,68 +100,67 @@ public class Detailed_View extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 0) {
-                    Intent intent0 = new Intent(view.getContext(), Fawcett_Inn.class);
+                    Intent intent0 = new Intent(view.getContext(), The_Astoria.class);
                     startActivity(intent0);
                 }
                 if (position == 1) {
-                    Intent intent1 = new Intent(view.getContext(), Fat_Fox.class);
+                    Intent intent1 = new Intent(view.getContext(), Bonitas.class);
                     startActivity(intent1);
                 }
                 if (position == 2) {
-                    Intent intent2 = new Intent(view.getContext(), PRYZM_Portsmouth.class);
+                    Intent intent2 = new Intent(view.getContext(), Brewhouse_And_Kitchen.class);
                     startActivity(intent2);
                 }
                 if (position == 3) {
-                    Intent intent3 = new Intent(view.getContext(), The_Astoria.class);
+                    Intent intent3 = new Intent(view.getContext(), The_Dockyard.class);
                     startActivity(intent3);
                 }
                 if (position == 4) {
-                    Intent intent4 = new Intent(view.getContext(), The_Dockyard.class);
+                    Intent intent4 = new Intent(view.getContext(), Fat_Fox.class);
                     startActivity(intent4);
                 }
                 if (position == 5) {
-                    Intent intent5 = new Intent(view.getContext(), Meat_And_Barrel.class);
+                    Intent intent5 = new Intent(view.getContext(), Fawcett_Inn.class);
                     startActivity(intent5);
                 }
                 if (position == 6) {
-                    Intent intent6 = new Intent(view.getContext(), ONeills.class);
+                    Intent intent6 = new Intent(view.getContext(), Fleet_and_Popworld.class);
                     startActivity(intent6);
                 }
                 if (position == 7) {
-                    Intent intent7 = new Intent(view.getContext(), Bonitas.class);
+                    Intent intent7 = new Intent(view.getContext(), Lord_John_Russell.class);
                     startActivity(intent7);
                 }
                 if (position == 8) {
-                    Intent intent8 = new Intent(view.getContext(), Brewhouse_And_Kitchen.class);
+                    Intent intent8 = new Intent(view.getContext(), Meat_And_Barrel.class);
                     startActivity(intent8);
                 }
                 if (position == 9) {
-                    Intent intent9 = new Intent(view.getContext(), Southsea_Villiage.class);
+                    Intent intent9 = new Intent(view.getContext(), Mr_Miyagis.class);
                     startActivity(intent9);
                 }
                 if (position == 10) {
-                    Intent intent10 = new Intent(view.getContext(), Mr_Miyagis.class);
+                    Intent intent10 = new Intent(view.getContext(), ONeills.class);
                     startActivity(intent10);
                 }
                 if (position == 11) {
-                    Intent intent11 = new Intent(view.getContext(), Scarlet_Tap.class);
+                    Intent intent11 = new Intent(view.getContext(), One_Eyed_Dog.class);
                     startActivity(intent11);
                 }
                 if (position == 12) {
-                    Intent intent12 = new Intent(view.getContext(), Lord_John_Russell.class);
+                    Intent intent12 = new Intent(view.getContext(), PRYZM_Portsmouth.class);
                     startActivity(intent12);
                 }
                 if (position == 13) {
-                    Intent intent13 = new Intent(view.getContext(), Fleet_and_Popworld.class);
+                    Intent intent13 = new Intent(view.getContext(), Scarlet_Tap.class);
                     startActivity(intent13);
                 }
                 if (position == 14) {
-                    Intent intent14 = new Intent(view.getContext(), One_Eyed_Dog.class);
+                    Intent intent14 = new Intent(view.getContext(), Southsea_Villiage.class);
                     startActivity(intent14);
                 }
             }});
     }
-
     class MyDetailedAdapter extends ArrayAdapter<String>{
         Context context;
         String vTitle[];

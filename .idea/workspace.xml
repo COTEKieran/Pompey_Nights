@@ -24,15 +24,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77acb73d-7216-447d-bbd5-d015bf8a507d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pompeynights.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pompeynights.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Surviving-with-android" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-    </list>
+    <list default="true" id="77acb73d-7216-447d-bbd5-d015bf8a507d" name="Default Changelist" comment="Fixed Errors" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -146,6 +138,14 @@
       <option name="presentableId" value="Default" />
       <updated>1626381275232</updated>
     </task>
+    <task id="LOCAL-00001" summary="Fixed Errors">
+      <created>1626519350571</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1626519350572</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -160,6 +160,10 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fixed Errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Errors" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="184" y="109" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1626519069336">
       <screen x="0" y="0" width="1440" height="900" />
@@ -169,6 +173,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="356" y="215" key="MultipleFileMergeDialog/0.0.1440.900@0.0.1440.900" timestamp="1626519013781" />
+    <state x="320" y="187" key="Vcs.Push.Dialog.v2" timestamp="1626519830087">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="320" y="187" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1626519830087" />
     <state x="503" y="368" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1626518993252">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
